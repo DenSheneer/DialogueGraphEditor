@@ -1,0 +1,21 @@
+{
+    "name": "com.densheneer.dialoguegraph.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6546d7765b4165b40850b3667f981c26",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
+        "GUID:72bd232e088c1e644a2f074b1acf148c"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
