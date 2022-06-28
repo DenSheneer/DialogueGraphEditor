@@ -53,17 +53,13 @@ public class GraphSaveUtility
             });
         }
 
-        if (!AssetDatabase.IsValidFolder("Assets/Resources"))
-        {
-            AssetDatabase.CreateFolder("Assets", "Resources");
-        }
-
-        AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Resources/{fileName}.asset");
+        DGE_Utilities.EnsureExistingConversationsFolder();
+        AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Resources/Conversations/{fileName}.asset");
         AssetDatabase.SaveAssets();
     }
     public void LoadGraph(string fileName)
     {
-        _containerCache = Resources.Load<DialogueContainer>(fileName);
+        _containerCache = Resources.Load<DialogueContainer>("Conversations/" + fileName);
 
         if (_containerCache == null)
         {

@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 public class DialogueGraphView : GraphView
 {
     public readonly Vector2 DefaultNodeSize = new Vector2(x: 150, y: 200);
+    public readonly Color NoneHighlightColor = Color.white;
     public DialogueGraphView()
     {
         styleSheets.Add(Resources.Load<StyleSheet>("DialogueGraph"));
@@ -99,29 +100,37 @@ public class DialogueGraphView : GraphView
         textField.SetValueWithoutNotify(dialogueNode.title);
         dialogueNode.mainContainer.Add(textField);
 
-        var actorObjects = Resources.LoadAll("Actors/", typeof(DialogueActor)).Cast<DialogueActor>().ToList();
+        List<DialogueActor> actorObjects = new List<DialogueActor>();
+        actorObjects.Add(null);
+        actorObjects.AddRange(Resources.LoadAll("Actors/", typeof(DialogueActor)).Cast<DialogueActor>().ToList());
         var listElements = new Dictionary<int, VisualElement>();
 
         var actorListView = new ListView();
         dialogueNode.inputContainer.Add(actorListView);
         actorListView.makeItem = () => new Label();
+
+        actorListView.makeItem = () => new Label();
         actorListView.bindItem = (item, index) =>
         {
             DialogueActor thisActor = actorObjects[index];
 
-            (item as Label).text = thisActor.name;
-            listElements.Add(thisActor.GetHashCode(), item);
-
-            if (dialogueNode.Actor != null && dialogueNode.Actor.GetHashCode() == thisActor.GetHashCode())
-            {
-                highlightListElement(item, thisActor.HighlightColor);
-            }
-            if (thisActor.name == "_None")
+            if (thisActor == null)
             {
                 (item as Label).text = "None";
-                if (actor == null)
+                listElements.Add(-1, item);
+
+                if (dialogueNode.Actor == null)
                 {
-                    dialogueNode.Actor = thisActor;
+                    highlightListElement(listElements[-1], NoneHighlightColor);
+                }
+            }
+            else
+            {
+                (item as Label).text = thisActor.name;
+                listElements.Add(thisActor.GetHashCode(), item);
+
+                if (dialogueNode.Actor != null && dialogueNode.Actor.GetHashCode() == thisActor.GetHashCode())
+                {
                     highlightListElement(item, thisActor.HighlightColor);
                 }
             }
@@ -133,7 +142,11 @@ public class DialogueGraphView : GraphView
             DialogueActor thisActor = selectedObjects.First() as DialogueActor;
             dialogueNode.Actor = thisActor;
             clearListHighlights(listElements.Values.ToList());
-            highlightListElement(listElements[thisActor.GetHashCode()], thisActor.HighlightColor);
+
+            if (thisActor == null)
+                highlightListElement(listElements[-1], NoneHighlightColor);
+            else
+                highlightListElement(listElements[thisActor.GetHashCode()], thisActor.HighlightColor);
         };
 
         dialogueNode.RefreshExpandedState();

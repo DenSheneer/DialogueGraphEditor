@@ -10,10 +10,7 @@ public class DialogueActor : ScriptableObject
     {
         var newActor = CreateInstance<DialogueActor>();
 
-        if (!AssetDatabase.IsValidFolder("Assets/Resources/Actors"))
-        {
-            AssetDatabase.CreateFolder("Assets/Resources", "Actors");
-        }
+        DGE_Utilities.EnsureExistingActorsFolder();
         AssetDatabase.CreateAsset(newActor, "Assets/Resources/Actors/Unnamed actor.asset");
         AssetDatabase.SaveAssets();
 

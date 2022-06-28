@@ -1,17 +1,17 @@
 {
   "name": "com.densheneer.dialoguegraph",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "Dialogue Graph Editor",
-  "description": "This is an example package",
-  "unity": "2019.1",
-  "unityRelease": "0b5",
+  "description": "This tool adds a dialogue graph editor to create and edit dialogue objects.",
+  "unity": "2021.3",
+  "unityRelease": "2f1",
   "documentationUrl": "https://example.com/",
   "changelogUrl": "https://example.com/changelog.html",
   "licensesUrl": "https://example.com/licensing.html",
   "dependencies": {
     "com.unity.textmeshpro": "3.0.0"
- },
- "keywords": [
+  },
+  "keywords": [
     "keyword1",
     "keyword2",
     "keyword3"
@@ -20,5 +20,6 @@
     "name": "Denise Gerrits",
     "email": "mail.deniseg@gmail.com",
     "url": "https://github.com/densheneer"
-  }
+  },
+  "type": "tool"
 }
