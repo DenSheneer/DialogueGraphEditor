@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueActor : ScriptableObject
 {
     public Color HighlightColor;
-    [MenuItem("Visual Novel/Create new actor...")]
+    [MenuItem("Dialogue/Create new actor...")]
     public static void CreateNewActor()
     {
         var newActor = CreateInstance<DialogueActor>();

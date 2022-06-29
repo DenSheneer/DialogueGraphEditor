@@ -137,11 +137,10 @@ public class SceneDialogue : SceneEvent
     {
         if (node != null)
         {
-            if (node.Actor != null)
-                if (node.Actor == null || node.Actor.name == "_None")
-                    actorNameContainer.text = string.Empty;
-                else
-                    actorNameContainer.text = node.Actor.name;
+            if (node.Actor == null)
+                actorNameContainer.text = string.Empty;
+            else
+                actorNameContainer.text = node.Actor.name;
 
             dialogueTextContainer.text = node.DialogueText;
         }

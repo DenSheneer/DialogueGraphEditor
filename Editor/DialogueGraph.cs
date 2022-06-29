@@ -11,7 +11,7 @@ public class DialogueGraph : EditorWindow
     private DialogueGraphView _graphView;
     private string _fileName;
 
-    [MenuItem("Visual Novel/Dialogue Graph")]
+    [MenuItem("Dialogue/Dialogue Graph")]
     public static void OpenDialogueGraphWindow()
     {
         var window = GetWindow<DialogueGraph>();

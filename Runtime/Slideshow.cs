@@ -7,7 +7,7 @@ public class Slideshow : ScriptableObject
 {
     public List<Texture2D> ImageSet;
 
-    [UnityEditor.MenuItem("Visual Novel/Create new Slideshow object...")]
+    [UnityEditor.MenuItem("Dialogue/Create new Slideshow object...")]
 
     public static void CreateSlideshowObject()
     {
