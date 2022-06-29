@@ -1,6 +1,6 @@
 {
   "name": "com.densheneer.dialoguegraph",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "displayName": "Dialogue Graph Editor",
   "description": "This tool adds a dialogue graph editor to create and edit dialogue objects. Look for the new \"Dialogue\" tab to open the editor window and to create new Actor objects.",
   "unity": "2021.3",
