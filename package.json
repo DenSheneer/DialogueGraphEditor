@@ -5,16 +5,16 @@
   "description": "This tool adds a dialogue graph editor to create and edit dialogue objects. Look for the new \"Dialogue\" tab to open the editor window and to create new Actor objects.",
   "unity": "2021.3",
   "unityRelease": "2f1",
-  "documentationUrl": "https://example.com/",
-  "changelogUrl": "https://example.com/changelog.html",
-  "licensesUrl": "https://example.com/licensing.html",
+  "documentationUrl": "https://github.com/DenSheneer/DialogueGraphEditor/wiki",
+  "changelogUrl": "https://github.com/DenSheneer/DialogueGraphEditor/",
+  "licensesUrl": "https://github.com/DenSheneer/DialogueGraphEditor/blob/main/LICENSE",
   "dependencies": {
     "com.unity.textmeshpro": "3.0.0"
   },
   "keywords": [
-    "keyword1",
-    "keyword2",
-    "keyword3"
+    "dialogue",
+    "visual novel",
+    "dialogue tree"
   ],
   "author": {
     "name": "Denise Gerrits",
